@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chidori-recruit.vercel.app/sitemap.xml
