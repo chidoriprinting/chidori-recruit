@@ -1,2 +1,7 @@
+# 採用サイトは非公開中。公開を再開するときは、下の4行（index.html〜sitemap.xml）を削除する
+index.html
+images
+robots.txt
+sitemap.xml
 CLAUDE.md
 .vercelignore
