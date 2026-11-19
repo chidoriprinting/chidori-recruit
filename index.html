@@ -283,6 +283,56 @@ section{padding:120px 0}
 }
 @media (max-width:480px){.trainings{grid-template-columns:1fr}}
 
+/* ---------- responsive tuning ---------- */
+/* 見出しは単語の途中で改行しない（<wbr> の位置で折り返す） */
+.sec-head h2,.about-text h3,.entry h2{word-break:keep-all;overflow-wrap:anywhere}
+.dept-body .what,.sec-head .lead,.training p,.benefit p,.steps span{word-break:auto-phrase}
+img{max-width:100%;height:auto}
+@media (min-width:761px) and (max-width:1000px){
+  .scroll{display:none}
+  .hero-copy{margin-bottom:14vh}
+}
+/* スマホ横向きなど高さが低い画面 */
+@media (max-height:520px) and (orientation:landscape){
+  .hero{height:auto;min-height:100svh}
+  .hero-body{flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:14px;padding:96px 0 64px;min-height:100svh;box-sizing:border-box}
+  .catch{writing-mode:horizontal-tb;font-size:30px;letter-spacing:.06em}
+  .hero-copy{align-self:auto;margin:0;max-width:none}
+  .hero-copy p{margin-bottom:14px;line-height:1.8}
+  .hero::after{background:linear-gradient(90deg,rgba(18,70,40,.85) 0%,rgba(18,70,40,.4) 60%,rgba(18,70,40,.1) 100%)}
+  .badges li{width:84px;height:84px;font-size:11px}.badges li b{font-size:18px}
+  .trim,.reg,.scroll{display:none}
+}
+@media (max-width:760px){
+  .sec-head{margin-bottom:40px}
+  .stats{grid-template-columns:1fr 1fr;gap:12px;margin-bottom:40px}
+  .stat:first-child{grid-column:1 / -1}
+  .stat{padding:22px 12px}
+  .stat .label{font-size:14px}
+  .stat:not(:first-child) .num{font-size:clamp(34px,10vw,44px)}
+  .dept-body{padding:22px 20px 26px}
+  .benefit{padding:20px 18px;gap:14px}
+  .benefit svg{width:38px;height:38px}
+  .entry .btn{width:min(100%,320px)}
+}
+@media (max-width:480px){
+  .training{display:grid;grid-template-columns:38% 1fr;align-items:center}
+  .training img{height:100%;aspect-ratio:auto;min-height:112px}
+  .training div{padding:12px 14px}
+  .training h3{font-size:16px;margin-bottom:4px}
+  .training p{font-size:13px;line-height:1.7}
+  .cal .d{height:36px}
+  .calendar{padding:20px 14px}
+  .holiday-list li{font-size:13px;padding:5px 13px}
+  .hero-body{padding-bottom:96px}
+}
+@media (max-width:360px){
+  .badges{gap:8px}
+  .badges li{width:84px;height:84px}
+  .dept-body dl{grid-template-columns:1fr;gap:0}
+  .dept-body dd{margin-bottom:10px}
+}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .slide.is-active img,.dot,.scroll::after{animation:none!important}
@@ -362,7 +412,7 @@ section{padding:120px 0}
         <img src="images/about.jpg" alt="千鳥印刷の社員が社屋の前で笑顔で並ぶ集合写真" loading="lazy">
       </div>
       <div class="about-text reveal">
-        <h3>一枚の紙に、<br>誰かの想いをのせて届ける。</h3>
+        <h3>一枚の紙に、<br>誰かの<wbr>想いを<wbr>のせて<wbr>届ける。</h3>
         <p>チラシ、パンフレット、名刺、ポスター。私たちがつくる印刷物の向こうには、いつも「伝えたい」と願う人がいます。</p>
         <p>千鳥印刷は、島根県松江市で地域のお客様の想いをかたちにしてきた印刷会社です。営業・製版・印刷・総務の仲間がそれぞれの持ち場で力を合わせ、一つひとつの仕事を丁寧に仕上げています。</p>
         <p>刷り上がった印刷物を手に取ったときの喜びを、一緒に味わいませんか。</p>
@@ -374,7 +424,7 @@ section{padding:120px 0}
 <!-- ===== 働き方 ===== -->
 <section id="workstyle" class="tint">
   <div class="wrap">
-    <div class="sec-head reveal"><p class="en">Work style</p><h2>オンもオフも、大切にできる働き方</h2>
+    <div class="sec-head reveal"><p class="en">Work style</p><h2>オンもオフも、<wbr>大切に<wbr>できる<wbr>働き方</h2>
       <p class="lead">しっかり休んで、しっかり働く。メリハリのある毎日を過ごせる休日体系です。</p></div>
     <div class="stats reveal">
       <div class="stat"><p class="label">年間休日</p><p class="num"><span data-count="110">110</span><small>日</small></p></div>
@@ -406,7 +456,7 @@ section{padding:120px 0}
 <!-- ===== 部署紹介 ===== -->
 <section id="department">
   <div class="wrap">
-    <div class="sec-head reveal"><p class="en">Department</p><h2>4つの部署で、ひとつの印刷物を</h2>
+    <div class="sec-head reveal"><p class="en">Department</p><h2>4つの部署で、<wbr>ひとつの<wbr>印刷物を</h2>
       <p class="lead">お客様の想いを聞き、データを整え、刷り上げ、会社全体を支える。それぞれの課が連携して、一つの仕事を完成させます。</p></div>
     <div class="depts">
       <article class="dept reveal">
@@ -452,7 +502,7 @@ section{padding:120px 0}
 <!-- ===== 研修制度 ===== -->
 <section id="training" class="tint">
   <div class="wrap">
-    <div class="sec-head reveal"><p class="en">Training</p><h2>未経験からでも、一歩ずつ成長できる</h2>
+    <div class="sec-head reveal"><p class="en">Training</p><h2>未経験からでも、<wbr>一歩ずつ<wbr>成長できる</h2>
       <p class="lead">印刷の知識がなくても大丈夫。基礎から専門スキル、これからの時代に必要な知識まで、段階的に学べる研修を用意しています。</p></div>
     <div class="train-top">
       <!-- 写真差し替え：研修制度メイン（1200×800px） -->
@@ -478,7 +528,7 @@ section{padding:120px 0}
 <section id="benefits">
   <div class="wrap">
     <div class="ben-top">
-      <div class="sec-head reveal" style="margin:0"><p class="en">Benefits</p><h2>ライフステージが変わっても、<br>長く働ける会社へ</h2>
+      <div class="sec-head reveal" style="margin:0"><p class="en">Benefits</p><h2>ライフステージが<wbr>変わっても、<br>長く<wbr>働ける<wbr>会社へ</h2>
         <p class="lead">結婚、出産、子育て、将来への備え。人生の節目を迎えても安心して働き続けられるよう、制度を整えています。</p></div>
       <!-- 写真差し替え：福利厚生（1200×800px推奨） -->
       <img class="reveal" src="images/benefits.jpg" alt="休憩スペースでお茶を飲みながら和やかに話す社員たち" loading="lazy">
@@ -499,7 +549,7 @@ section{padding:120px 0}
   <!-- 写真差し替え：エントリー背景（1920×800px） -->
   <div class="entry-bg" aria-hidden="true"><img src="images/entry-bg.jpg" alt="" loading="lazy"></div>
   <div class="wrap reveal">
-    <h2>一緒に、未来を<br>刷り上げよう。</h2>
+    <h2>一緒に、<wbr>未来を<br>刷り上げよう。</h2>
     <p>少しでも興味を持っていただけたら、まずはお気軽にご連絡ください。職場見学のご相談も受け付けています。</p>
     <div class="btns">
       <a class="btn btn-entry" href="mailto:info@chidori-printing.com?subject=%E6%8E%A1%E7%94%A8%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC">エントリーする</a>
